@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Project5
 {
-    // instance variables - replace the example below with your own
+    // IGNORE THIS --- Scrapped and used for parts
 
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
