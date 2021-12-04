@@ -25,13 +25,18 @@ public class Project5Final
         //branching study stories, based on users 2nd input
         //user choice 1
         StoryPath study1 = new StoryPath("One");
-        study1.setStory("You decide to read one page.\nIt's quite boring, and the plot doesn't make much sense.\nYou are so bored, you decide to leave the mansion and don't look back.\nPress 4 to try again!");
+        study1.setStory("You decide to read one page.\nIt's quite boring, and the plot doesn't make much sense.\nYou are so bored, you decide to leave the mansion and don't look back.\nPress 6 to try again!");
         //user choice 2
         StoryPath study2 = new StoryPath("Two");
-        study2.setStory("You decide to read two pages.\nThe first page is a gripping narrative, but as you turn the second page, you notice that the rest of the book is blank.\nAngry, you throw the book away and leave the room.\nStill upset, you decide to leave the mansion.\nPress 4 to try again!");
+        study2.setStory("You decide to read two pages.\nThe first page is a gripping narrative, but as you turn the second page, you notice that the rest of the book is blank.\nAngry, you throw the book away and leave the room.\nStill upset, you decide to leave the mansion.\nPress 6 to try again!");
         //user choice 3
         StoryPath study3 = new StoryPath("Three");
-        study3.setStory("You decide to read three pages.\nThe first page is the start of a thrilling horror story.\nThe second page is even scarier, putting you on the edge of your seat.\nSuddenly fearful, you hesitate to flip to the third page...\nPress 4 to try again!");
+        study3.setStory("You decide to read three pages.\nThe first page is the start of a thrilling horror story.\nThe second page is even scarier, putting you on the edge of your seat.\nSuddenly fearful, you hesitate to flip to the third page...\nDo you turn the page (1) or leave (2)?");
+        //adding another story branch for fun
+        StoryPath studyY = new StoryPath("Flip the page");
+        studyY.setStory("You decide to flip the page, steeling yourself for whatever comes next.\nYour fear was for nothing, however, as you flip the page only to discover two words printed on them: 'Fooled You!'\nPress 6 to try again!");
+        StoryPath studyN = new StoryPath("Leave");
+        studyN.setStory("Afraid, you decide to not flip to the third page.\nAs you turn around, however, you come face-to-face with a skeleton!\nScreaming, you run out of the mansion, never to return.\nPress 6 to try again!");
         
         //second story, the basement (choice 2)
         StoryPath basement = new StoryPath("Basement");
@@ -39,10 +44,14 @@ public class Project5Final
         //branching basement stories, based on users 2nd input
         //user choice 1 (right)
         StoryPath basement1 = new StoryPath("Right");
-        basement1.setStory("You reach to your right, brushing against a cobweb in the shadows.\nYou start to freak out, as you are afraid of spiders.\nPress 4 to try again!");
+        basement1.setStory("You reach to your right, brushing against a cobweb in the shadows.\nYou start to freak out, as you are afraid of spiders.\nPress 6 to try again!");
         //user choice 2 (left)
         StoryPath basement2 = new StoryPath("Left");
-        basement2.setStory("You reach to your left, bumping into a light switch.\nYou turn on the light, illuminating the dark.\nYou find yourself in a dusty wine cellar.\nYou decide to take several of the bottles, selling them on Ebay later.\nPress 4 to try again!"); 
+        basement2.setStory("You reach to your left, bumping into a light switch.\nYou turn on the light, illuminating the dark.\nYou find yourself in a dusty wine cellar.\nDo you take the bottles (1), or drink one now (2)?");
+        StoryPath basementT = new StoryPath("Take the bottles");
+        basementT.setStory("You decide to take several of the bottles, selling them on Ebay later and making yourself a fortune.\nPress 6 to try again!"); 
+        StoryPath basementN = new StoryPath("Drink one now");
+        basementN.setStory("You take a bottle off of the shelf, excited to try it out.\nHowever, after uncorking it and pouring yourself a glass, you realize that the wine has turned into vinegar.\nYour disappointment is immeasurable.\nPress 6 to try again!");
         
         //third story, the kitchen (choice 3)
         StoryPath kitchen = new StoryPath("Kitchen");
@@ -50,13 +59,13 @@ public class Project5Final
         //branching kitchen stories, based on user's 2nd input
         //user choice 1
         StoryPath kitchen1 = new StoryPath("Sandwich");
-        kitchen1.setStory("You start to make yourself a peanut butter and jelly sandwich.\nHowever, you fail to see that the bread you use is moldy.\nFifteen minutes later, you die due to accute food poisoning.\nPress 4 to try again!");
+        kitchen1.setStory("You start to make yourself a peanut butter and jelly sandwich.\nHowever, you fail to see that the bread you use is moldy.\nFifteen minutes later, you die due to accute food poisoning.\nPress 6 to try again!");
         //user choice 2
         StoryPath kitchen2 = new StoryPath("Soup");
-        kitchen2.setStory("You reheat some tomato soup you find in a cabinet.\nYou wish that the soup was chicken noodle.\nBut free food is free food, so you don't complain.\nAll in all, you enjoy your meal.\nPress 4 to try again!");
+        kitchen2.setStory("You reheat some tomato soup you find in a cabinet.\nYou wish that the soup was chicken noodle.\nBut free food is free food, so you don't complain.\nAll in all, you enjoy your meal.\nPress 6 to try again!");
         //user choice 3
         StoryPath kitchen3 = new StoryPath("Cereal");
-        kitchen3.setStory("You find a box of raisin bran in the cabinet.\nSearching around, however, you fail to find any milk.\nYou decide to rough it and eat the cereal plain.\nAfter breaking your teeth on the stale bran, you regret your decision.\nPress 4 to try again!");
+        kitchen3.setStory("You find a box of raisin bran in the cabinet.\nSearching around, however, you fail to find any milk.\nYou decide to rough it and eat the cereal plain.\nAfter breaking your teeth on the stale bran, you regret your decision.\nPress 6 to try again!");
         
         //adding the stories to the arraylist based on user input
         //this will print out the story later
@@ -69,10 +78,14 @@ public class Project5Final
         study.setBranch(study1);
         study.setBranch(study2);
         study.setBranch(study3);
+        study3.setBranch(studyY);
+        study3.setBranch(studyN);
         
         basement.setBranch(basement1);
         basement.setBranch(basement2);
-    
+        basement2.setBranch(basementT);
+        basement2.setBranch(basementN);
+        
         kitchen.setBranch(kitchen1);
         kitchen.setBranch(kitchen2);
         kitchen.setBranch(kitchen3);
@@ -88,7 +101,7 @@ public class Project5Final
         int choice1 =0;
         //while loop to take user's input 
         //try/catch loop prevents the user from inputting something out of bounds
-        while(choice1 != 4) {
+        while(choice1 != 6) {
             choice1 = scnr.nextInt();
             try{
                 StoryPath chosen = stories.get(choice1-1);
